@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm - HuyTruong Sports</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="../index.html">HUYTRUONG<span>SPORTS</span></a></div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Trang Chủ</a></li>
+                <li><a href="product.html">Sản Phẩm</a></li>
+                <li><a href="about.html">Giới Thiệu</a></li>
+                <li><a href="contact.html">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="detail-container">
+        <div class="detail-box">
+            <div class="detail-img-box">
+                <img id="detail-img" src="../assets/dailung.jpg" alt="Sản phẩm">
+            </div>
+            <div class="detail-info-box">
+                <h1 id="detail-title">Đai Lưng Tập Tạ Cao Cấp</h1>
+                <div class="detail-price" id="detail-price">250.000 VNĐ</div>
+                <div class="desc-title">Mô tả sản phẩm:</div>
+                <p class="detail-desc" id="detail-desc">Đang tải dữ liệu mô tả sản phẩm...</p>
+                <button class="btn-buy-now" onclick="addToCart(document.getElementById('detail-title').innerText)">Thêm Vào Giỏ Hàng</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="cart-fixed-box" style="position: fixed; bottom: 20px; right: 20px; background: #000; color: #fff; padding: 20px; border-radius: 8px; border: 2px solid #ed1c24; box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 9999; min-width: 250px; font-family: 'Segoe UI', sans-serif;">
+        <h3 style="margin: 0 0 10px 0; font-size: 16px; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 5px; color: #ed1c24;">🛒 Giỏ Hàng Của Bạn</h3>
+        <p style="margin: 5px 0; font-size: 14px;">Tổng số lượng: <strong id="cart-total-qty">0</strong> món</p>
+        <p style="margin: 5px 0; font-size: 15px; font-weight: bold;">Tổng tiền: <span id="cart-total-price" style="color: #ed1c24;">0 VNĐ</span></p>
+        <button onclick="openCartModal()" style="margin-top: 10px; width: 100%; background: #ed1c24; color: #fff; border: none; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold; text-transform: uppercase; transition: 0.3s;">Kiểm Tra Giỏ Hàng</button>
+        <button onclick="clearCart()" style="margin-top: 5px; width: 100%; background: #222; color: #888; border: none; padding: 5px; border-radius: 4px; cursor: pointer; font-size: 11px; text-transform: uppercase;">Xóa nhanh</button>
+    </div>
+
+    <div id="cart-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 10000; justify-content: center; align-items: center; font-family: 'Segoe UI', sans-serif;">
+        <div style="background: #1a1a1a; color: #fff; width: 90%; max-width: 550px; padding: 25px; border-radius: 8px; border-top: 4px solid #ed1c24; box-shadow: 0 5px 25px rgba(0,0,0,0.7); position: relative;">
+            <span onclick="closeCartModal()" style="position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #666; font-weight: bold;">&times;</span>
+            <h2 style="margin-top: 0; color: #fff; font-size: 22px; border-bottom: 2px solid #2d2d2d; padding-bottom: 10px;">📋 CHI TIẾT GIỎ HÀNG</h2>
+            <div id="cart-modal-items" style="max-height: 240px; overflow-y: auto; margin: 15px 0; padding-right: 5px;"></div>
+            <div style="border-top: 2px solid #2d2d2d; padding-top: 15px; margin-top: 15px;">
+                <p style="margin: 5px 0; font-size: 16px; display: flex; justify-content: space-between;"><span>Tạm tính:</span> <span id="modal-subtotal">0 VNĐ</span></p>
+                <p style="margin: 5px 0; font-size: 15px; display: flex; justify-content: space-between; color: #888;"><span>Phí vận chuyển:</span> <span>Miễn phí</span></p>
+                <p style="margin: 10px 0 0 0; font-size: 18px; font-weight: bold; display: flex; justify-content: space-between; border-top: 1px dashed #444; padding-top: 10px;">
+                    <span>TỔNG THANH TOÁN:</span> <span id="modal-total" style="color: #ed1c24;">0 VNĐ</span>
+                </p>
+            </div>
+            <button onclick="checkoutAction()" style="margin-top: 20px; width: 100%; background: #ed1c24; color: #fff; border: none; padding: 12px; border-radius: 4px; cursor: pointer; font-size: 15px; font-weight: bold; text-transform: uppercase; transition: 0.3s;">Tiến Hành Thanh Toán</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">&copy; 2026 Cửa Hàng Thể Thao HuyTruong. All Rights Reserved.</div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
